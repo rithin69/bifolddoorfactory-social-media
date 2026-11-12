@@ -1,27 +1,20 @@
 # Bifold Door Factory social posts
 
-Every Monday morning an agent turns the photos in `inbox/` into draft posts in Buffer for Instagram, TikTok and Facebook. Nothing is posted until someone approves it in the Buffer app.
+Every Monday at 8am (UK time) a Claude agent turns new photo **Ideas** in Buffer into draft posts for Instagram, TikTok and Facebook. Nothing is posted until someone approves it in the Buffer app.
 
-## Adding photos (from a phone or a computer)
-1. Open this repository on github.com and go into the `inbox` folder.
-2. Tap **Add file**, then **Upload files**, and choose the photos. Real photos of our own jobs only.
-3. **Optional but helpful:** add a note with the same name as the photo, ending in `.txt`. For example, `ealing-kitchen.jpg` gets `ealing-kitchen.txt` containing:
-   ```
-   Ealing, rear extension. 4 panel Schüco bifold, anthracite grey. Flush threshold.
-   ```
-   The agent only states facts it's given or can see, so a note makes for a better caption.
-4. Give photos of the same job the same start to their names: `ealing-1.jpg`, `ealing-2.jpg`.
-5. Tap **Commit changes**.
+## For the owner: adding photos
+1. Open the Buffer app and tap **Create**, then **Idea**.
+2. Add the photos of one job and a short note, for example "Ealing, rear extension, 4 panel Schüco bifold, anthracite grey".
+3. Tap **Save**.
 
-## Each Monday
-- The agent picks up to 3 jobs and edits the photos lightly (crop, straighten, light and colour only).
-- It writes a caption for each platform and saves drafts in Buffer for Tuesday, Thursday and Saturday at 6pm.
-- Open Buffer, check each draft, edit it if you want, then approve it.
-- Photos it didn't use stay in `inbox/` for the following week.
-- Photos it turned down go to `rejected/`, with the reason in `log.md`.
+On Monday the drafts appear in Buffer for Tuesday, Thursday and Saturday at 6pm. Check them, edit anything you want, and approve.
 
-## Files
+## What's in this repository
+This repository is public so that Buffer can fetch the edited images. It never holds original photos or customer details.
+
 - `AGENT.md`: the agent's step-by-step instructions.
 - `brand.md`: facts, voice and the claims we never make. Edit it to change how the posts sound.
-- `scripts/edit.py`: the photo editor.
+- `scripts/edit.py`: the light photo editor. It crops, straightens and corrects light and colour, and strips location data.
+- `images/`: the edited images, one folder per week.
+- `processed.json`: the Buffer Ideas already used.
 - `log.md`: what happened on each run.
