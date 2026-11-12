@@ -63,7 +63,7 @@ For each post, write one caption per platform, following `brand.md`.
 
 ### 6. Publish the images (not the posts)
 - Commit `images/<yyyy-mm-dd>/` and push to `main`.
-- Each image's URL is `https://raw.githubusercontent.com/rithin69/bdf-social-media/main/images/<yyyy-mm-dd>/<file>`.
+- Each image's URL is `https://raw.githubusercontent.com/rithin69/bifolddoorfactory-social-media/main/images/<yyyy-mm-dd>/<file>`.
 - Check every URL with `curl -sI` and confirm it returns `200` with `image/jpeg`. If it doesn't yet, wait 30 seconds and retry, up to 5 times.
 - If a push to `main` is refused, stop, write the exact error in `log.md`, and say so in your final message. Do not push to another branch.
 
