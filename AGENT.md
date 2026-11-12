@@ -19,7 +19,7 @@ Read `brand.md` before writing anything. It is the source of truth for facts, vo
 ## Steps
 
 ### 1. Set up
-- Run `pip install -q -r requirements.txt`.
+- Run `python3 -m venv /tmp/venv && /tmp/venv/bin/pip install -q -r requirements.txt`. The system Pillow is broken, so always run the editor with `/tmp/venv/bin/python`.
 - Check that the Buffer tools are available (`get_account`, `list_ideas`, `list_channels`, `create_post`).
 - If they are not, append the problem to `log.md`, commit, push to `main` and stop.
 
@@ -48,7 +48,7 @@ For each photo, decide the settings by looking at it:
 
 Then run:
 ```
-python scripts/edit.py /tmp/bdf/<idea-id>/<file> --name <yyyy-mm-dd>-<short-slug>-<n> --focus x,y [--rotate n] [--brightness n] [--contrast n] [--saturation n] [--warmth n] [--sharpen 1] --out images/<yyyy-mm-dd>
+/tmp/venv/bin/python scripts/edit.py /tmp/bdf/<idea-id>/<file> --name <yyyy-mm-dd>-<short-slug>-<n> --focus x,y [--rotate n] [--brightness n] [--contrast n] [--saturation n] [--warmth n] [--sharpen 1] --out images/<yyyy-mm-dd>
 ```
 - Look at both outputs (`-4x5.jpg` and `-9x16.jpg`). If the subject is cut off, change the focus and run it again.
 - The slug describes the product, never the customer, for example `ealing-bifold`.
