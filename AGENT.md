@@ -42,13 +42,18 @@ Read `brand.md` before writing anything. It is the source of truth for facts, vo
 ### 4. Edit the photos
 For each photo, decide the settings by looking at it:
 - **focus:** where the main subject (door, window, façade) sits, as `x,y` from 0 to 1, so the crops keep it in frame.
-- **rotate:** only if the verticals are visibly tilted, within ±5°.
-- **brightness, contrast, saturation, warmth:** small corrections only, so it looks like a well-taken photo, not a filtered one.
+- **rotate:** only if the whole photo is visibly tilted (the horizon or floor line slopes), within ±5°.
+- **keystone:** if door frames and walls lean inwards because the phone was tilted, within ±0.15. Use a positive value when they narrow towards the top, which is the usual case for outside shots, and a negative value when they narrow towards the bottom. Typical values are 0.04–0.10.
+- **auto:** leave it on (the default). It sets levels and removes a colour cast. Turn it off (`--auto 0`) only for a deliberate sunset or evening shot whose warm light should stay.
+- **shadows / highlights:** lift dark interiors and door frames (`--shadows 0.2–0.35`), and recover a bright sky or glare on glass (`--highlights 0.15–0.3`).
+- **clarity:** 0.3–0.6 makes frames, glazing bars and brickwork crisper. Use 0 for faces or very noisy, dark photos.
+- **brightness, contrast, saturation, warmth:** small finishing corrections only, so it looks like a well-taken photo, not a filtered one.
 - **sharpen:** 1 only if it is slightly soft.
+- **tall:** `crop` (default) for upright photos. Use `blur` for wide photos where a 9:16 crop would cut off the doors. It shows the whole 4:5 picture on a blurred copy of the photo.
 
 Then run:
 ```
-/tmp/venv/bin/python scripts/edit.py /tmp/bdf/<idea-id>/<file> --name <yyyy-mm-dd>-<short-slug>-<n> --focus x,y [--rotate n] [--brightness n] [--contrast n] [--saturation n] [--warmth n] [--sharpen 1] --out images/<yyyy-mm-dd>
+/tmp/venv/bin/python scripts/edit.py /tmp/bdf/<idea-id>/<file> --name <yyyy-mm-dd>-<short-slug>-<n> --focus x,y [--rotate n] [--keystone n] [--auto 0] [--shadows n] [--highlights n] [--clarity n] [--brightness n] [--contrast n] [--saturation n] [--warmth n] [--sharpen 1] [--tall blur] --out images/<yyyy-mm-dd>
 ```
 - Look at both outputs (`-4x5.jpg` and `-9x16.jpg`). If the subject is cut off, change the focus and run it again.
 - The slug describes the product, never the customer, for example `ealing-bifold`.
