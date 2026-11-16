@@ -14,7 +14,7 @@ This repository is public so that Buffer can fetch the edited images. It never h
 
 - `AGENT.md`: the agent's step-by-step instructions.
 - `brand.md`: facts, voice and the claims we never make. Edit it to change how the posts sound.
-- `scripts/edit.py`: the light photo editor. It crops, straightens and corrects light and colour, and strips location data.
+- `scripts/edit.py`: the photo editor. It measures each photo, straightens it, corrects light and colour, frames it around the doors and glazing without cutting them off, and strips location data.
 - `images/`: the edited images, one folder per week.
 - `processed.json`: the Buffer Ideas already used.
 - `log.md`: what happened on each run.

@@ -40,22 +40,59 @@ Read `brand.md` before writing anything. It is the source of truth for facts, vo
 - A post can use 1 to 4 photos from the same Idea. Put the best one first.
 
 ### 4. Edit the photos
-For each photo, decide the settings by looking at it:
-- **focus:** where the main subject (door, window, façade) sits, as `x,y` from 0 to 1, so the crops keep it in frame.
-- **rotate:** only if the whole photo is visibly tilted (the horizon or floor line slopes), within ±5°.
-- **keystone:** if door frames and walls lean inwards because the phone was tilted, within ±0.15. Use a positive value when they narrow towards the top, which is the usual case for outside shots, and a negative value when they narrow towards the bottom. Typical values are 0.04–0.10.
-- **auto:** leave it on (the default). It sets levels and removes a colour cast. Turn it off (`--auto 0`) only for a deliberate sunset or evening shot whose warm light should stay.
-- **shadows / highlights:** lift dark interiors and door frames (`--shadows 0.2–0.35`), and recover a bright sky or glare on glass (`--highlights 0.15–0.3`).
-- **clarity:** 0.3–0.6 makes frames, glazing bars and brickwork crisper. Use 0 for faces or very noisy, dark photos.
-- **brightness, contrast, saturation, warmth:** small finishing corrections only, so it looks like a well-taken photo, not a filtered one.
-- **sharpen:** 1 only if it is slightly soft.
-- **tall:** `crop` (default) for upright photos. Use `blur` for wide photos where a 9:16 crop would cut off the doors. It shows the whole 4:5 picture on a blurred copy of the photo.
+Every photo gets its own edit. Never apply one set of settings to every photo.
 
-Then run:
+**a. Measure it.**
 ```
-/tmp/venv/bin/python scripts/edit.py /tmp/bdf/<idea-id>/<file> --name <yyyy-mm-dd>-<short-slug>-<n> --focus x,y [--rotate n] [--keystone n] [--auto 0] [--shadows n] [--highlights n] [--clarity n] [--brightness n] [--contrast n] [--saturation n] [--warmth n] [--sharpen 1] [--tall blur] --out images/<yyyy-mm-dd>
+/tmp/venv/bin/python scripts/edit.py /tmp/bdf/<idea-id>/<file> --analyse
 ```
-- Look at both outputs (`-4x5.jpg` and `-9x16.jpg`). If the subject is cut off, change the focus and run it again.
+This prints what the photo is like and the settings it suggests, each with a reason:
+- size and shape;
+- brightness, dark areas and blown-out areas;
+- colour cast and saturation;
+- sharpness and grain;
+- how its vertical lines lean.
+
+**b. Look at the photo and decide what kind of shot it is.** Then adjust the suggestions:
+
+| Kind of shot | What usually helps |
+|---|---|
+| Outside, sunny | `--highlights 0.2–0.3` for the sky and glass glare; clarity 0.4 |
+| Outside, grey or overcast | `--contrast 1.06–1.1`, `--saturation 1.06`, clarity 0.5 |
+| Inside, looking out through the doors | `--shadows 0.3–0.45` and `--highlights 0.3–0.45`, so both the room and the garden show |
+| Dusk, evening or lit at night | `--auto 0` to keep the warm light; `--denoise 3–6` if grainy; clarity 0.15 |
+| Close-up of a handle, hinge, threshold or corner | clarity 0.5–0.6, no keystone; the focus is on the detail |
+| Wide shot of a whole elevation or façade | check verticals carefully; the 9:16 version will be the whole photo on a blurred background |
+| Building site or work in progress | edit as normal, but mention the mess in the final summary |
+
+**Shape rule for the post (decide this before editing):**
+- If **every** photo in the post is landscape (wider than tall), run each one with `--feed native`. Instagram and Facebook accept landscape photos, so nothing is cut off and there are no blurred bars.
+- Otherwise leave `--feed` on auto: portrait photos get a 4:5 crop placed around the frames and glazing, and any landscape photo is shown whole on a blurred 4:5 background. All photos in one post then have the same shape, which Instagram needs for a carousel.
+- TikTok always gets the 9:16 version; the script shows the whole photo on a blurred background whenever a 9:16 crop would cut into the structure.
+
+**c. Check the straightening yourself.**
+- If `lines_reliable` is true, the measured `rotate` and `keystone` are usually right. Still check them against the photo.
+- If it is false, judge by eye:
+  - `rotate` (±5°) only when the whole photo is tilted;
+  - `keystone` (±0.2) when frames and walls lean in. Use a positive value when they narrow towards the top, as in most outside shots taken from the ground.
+- Interiors shot with a wide lens lean outwards near the edges. That is normal: don't "fix" it with rotation.
+
+**d. Edit it.** Any setting you leave out uses the suggestion for this photo; anything you pass overrides it.
+```
+/tmp/venv/bin/python scripts/edit.py /tmp/bdf/<idea-id>/<file> --name <yyyy-mm-dd>-<short-slug>-<n> [--feed native] [overrides] --out images/<yyyy-mm-dd>
+```
+Options are `--feed --tall --focus --rotate --keystone --auto --denoise --shadows --highlights --brightness --contrast --clarity --saturation --warmth --sharpen`. The script's docstring gives the ranges. It prints the final settings, including how each output was framed and what share of the frames and glazing it keeps. The crop is chosen automatically around the door frames, mullions and glazing; only pass `--focus x,y` if it plainly picked the wrong part of the photo.
+
+**e. Look at both outputs (`-feed.jpg` and `-9x16.jpg`) and fix what's wrong, up to 2 more tries.**
+- **Anything cut off:** every door panel, the whole frame and the full width of the glazing must be visible in both outputs, with a little room around them. If not, re-run with `--feed fit` (or `--feed native` when the shape rule allows) and `--tall fit`. Never accept an output that cuts through a door or window.
+- **Verticals still lean, or now lean the other way:** adjust `--keystone` or `--rotate`.
+- **It looks over-processed:**
+  - grey or flat sky, or halos around frames: lower `--clarity` or `--highlights`;
+  - muddy shadows: lower `--shadows`;
+  - unnatural colours: lower `--saturation`, or use `--auto 0`.
+- **It looks worse than the original:** go back with `--preset none` and only the corrections it really needs.
+
+The aim is a photo that looks like a skilled photographer took it on a good day. It should not look filtered.
 - The slug describes the product, never the customer, for example `ealing-bifold`.
 - Never use any other tool to change what is in a photo.
 - **Videos:** don't edit them. Use the Idea's own video URL as it is, for TikTok and Instagram only.
@@ -80,7 +117,7 @@ For each post, write one caption per platform, following `brand.md`.
   - `mode: "customScheduled"`
   - `dueAt` set to the slot, as ISO 8601 with the UTC offset
   - the platform's caption
-  - `assets`: images with `url` set to the raw URL. Use the 4:5 images for Instagram and Facebook and the 9:16 images for TikTok.
+  - `assets`: images with `url` set to the raw URL. Use the `-feed.jpg` images for Instagram and Facebook and the `-9x16.jpg` images for TikTok. Every image in one post must have the same shape (follow the shape rule in step 4).
 - If Buffer refuses a draft with a time, create it as a draft without `mode` and `dueAt`, and put the intended time in the log.
 - **Never** use `shareNow` or `shareNext`, or create anything that isn't a draft.
 - **Never** edit or delete posts, or Ideas, that you did not create in this run.
