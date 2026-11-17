@@ -95,7 +95,11 @@ Options are `--feed --tall --focus --rotate --keystone --auto --denoise --shadow
 The aim is a photo that looks like a skilled photographer took it on a good day. It should not look filtered.
 - The slug describes the product, never the customer, for example `ealing-bifold`.
 - Never use any other tool to change what is in a photo.
-- **Videos:** don't edit them. Use the Idea's own video URL as it is, for TikTok and Instagram only.
+- **Videos:** don't edit them; use the Idea's own video URL as it is. What goes where depends on what the Idea holds:
+  - **Photos only:** one post per channel with the edited photos (as above).
+  - **Video only:** the video goes to TikTok, Instagram (as a Reel) and Facebook, one post each, with the same slot. If the Idea has more than one video, use the best one and leave the rest for next week (note them in the log).
+  - **Photos and a video:** Instagram and Facebook get the edited photos; TikTok gets the video. One slot, one post per channel. Never mix photos and video in the same post.
+  - Drop a video for the same reasons as a photo (faces without agreement, number plates, house numbers, paperwork) or if it is shaky or too dark to see the doors.
 
 ### 5. Write the captions
 For each post, write one caption per platform, following `brand.md`.
@@ -117,7 +121,7 @@ For each post, write one caption per platform, following `brand.md`.
   - `mode: "customScheduled"`
   - `dueAt` set to the slot, as ISO 8601 with the UTC offset
   - the platform's caption
-  - `assets`: images with `url` set to the raw URL. Use the `-feed.jpg` images for Instagram and Facebook and the `-9x16.jpg` images for TikTok. Every image in one post must have the same shape (follow the shape rule in step 4).
+  - `assets`: images with `url` set to the raw URL. Use the `-feed.jpg` images for Instagram and Facebook and the `-9x16.jpg` images for TikTok. Every image in one post must have the same shape (follow the shape rule in step 4). For a video post, the single asset is the Idea's video URL.
 - If Buffer refuses a draft with a time, create it as a draft without `mode` and `dueAt`, and put the intended time in the log.
 - **Never** use `shareNow` or `shareNext`, or create anything that isn't a draft.
 - **Never** edit or delete posts, or Ideas, that you did not create in this run.
