@@ -19,5 +19,16 @@
       "6af5ed4ed95eb37c36f3e8f4",
       "6af5ed516b041da7276036b6"
     ]
+  },
+  "6afc3e4625d8078bf6d3547b": {
+    "date": "2026-11-17",
+    "status": "drafted",
+    "reason": "Re-run of the 12 November job with the new photo editor; all 4 photos used",
+    "branch": "media-2026-11-17",
+    "posts": [
+      "6afc3e9e9d7d4c6b7858a0a0",
+      "6afc3ea2b9fb95e12d026984",
+      "6afc3ea66d6484cf6f1784d6"
+    ]
   }
 }
