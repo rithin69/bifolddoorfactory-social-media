@@ -36,8 +36,7 @@ Read `brand.md` before writing anything. It is the source of truth for facts, vo
   - it is blurred or very dark;
   - a person is the main subject of the photo (a portrait or close-up), unless the Idea's note says they agreed (for example "faces OK", "that's me, fine to post");
   - it shows a house number, car number plate, paperwork or a screen with personal details;
-  - it is clearly not our work (a stock image or a screenshot);
-  - it has been changed with an AI tool: a label such as "AI-generated content", "Edited with AI", "Made with AI" or a ✦ sparkle mark (phones add these after an AI eraser or generative edit), or anything that looks erased or filled in. Never remove, crop out or cover such a label, and never use the photo: it no longer shows the job as it really was. In the summary, tell the owner which photo it was and how to get the original back (on Samsung: Gallery → open the photo → Edit → Revert; on iPhone: Photos → Edit → Revert), then save that original as a new Idea.
+  - it is clearly not our work (a stock image or a screenshot).
 - If no usable photo is left, mark the Idea `rejected` with the reason and move on.
 
 ### 3b. Hide faces
