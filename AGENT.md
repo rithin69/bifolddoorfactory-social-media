@@ -37,7 +37,7 @@ Read `brand.md` before writing anything. It is the source of truth for facts, vo
   - it shows a house number, car number plate, paperwork or a screen with personal details;
   - it is clearly not our work (a stock image or a screenshot).
 - If no usable photo is left, mark the Idea `rejected` with the reason and move on.
-- A post can use 1 to 4 photos from the same Idea. Put the best one first.
+- A post can use 1 to 10 photos from the same Idea. Put the best one first and leave out any that are near-duplicates or weak; fewer good photos beat more average ones.
 
 ### 4. Edit the photos
 Every photo gets its own edit. Never apply one set of settings to every photo.
@@ -66,7 +66,8 @@ This prints what the photo is like and the settings it suggests, each with a rea
 | Building site or work in progress | edit as normal, but mention the mess in the final summary |
 
 **Shape rule for the post (decide this before editing):**
-- If **every** photo in the post is landscape (wider than tall), run each one with `--feed native`. Instagram and Facebook accept landscape photos, so nothing is cut off and there are no blurred bars.
+- If the post will include a **video**, everything is 4:5: run the photos with `--feed auto` (never `native`), because the video's feed version is 4:5 and all items in an Instagram carousel must match.
+- Otherwise, if **every** photo in the post is landscape (wider than tall), run each one with `--feed native`. Instagram and Facebook accept landscape photos, so nothing is cut off and there are no blurred bars.
 - Otherwise leave `--feed` on auto: portrait photos get a 4:5 crop placed around the frames and glazing, and any landscape photo is shown whole on a blurred 4:5 background. All photos in one post then have the same shape, which Instagram needs for a carousel.
 - TikTok always gets the 9:16 version; the script shows the whole photo on a blurred background whenever a 9:16 crop would cut into the structure.
 
@@ -95,11 +96,21 @@ Options are `--feed --tall --focus --rotate --keystone --auto --denoise --shadow
 The aim is a photo that looks like a skilled photographer took it on a good day. It should not look filtered.
 - The slug describes the product, never the customer, for example `ealing-bifold`.
 - Never use any other tool to change what is in a photo.
-- **Videos:** don't edit them; use the Idea's own video URL as it is. What goes where depends on what the Idea holds:
+**f. Videos.** Download the clip like a photo, then measure it:
+```
+/tmp/venv/bin/python scripts/video.py /tmp/bdf/<idea-id>/<file> --analyse
+```
+It reports the length, shape, sound, light and grain, and suggests settings with reasons. Then edit it:
+```
+/tmp/venv/bin/python scripts/video.py /tmp/bdf/<idea-id>/<file> --name <yyyy-mm-dd>-<short-slug>-v1 --out images/<yyyy-mm-dd> [overrides]
+```
+It writes `<name>-feed.mp4` (4:5, up to 60 seconds, for the Instagram carousel and Facebook) and `<name>-9x16.mp4` (vertical, up to 3 minutes, for TikTok and the Instagram Reel), with gentle light and colour correction, levelled sound and no metadata, plus three JPEG frames of each (`-feed-1.jpg` to `-9x16-3.jpg`). **Look at all six frames** the way you check photos: nothing cut off (a landscape clip is shown whole on a blurred background, never cropped tall), natural colour, no over-processing. Options: `--start` and `--length` to choose the best part of a long clip, `--brightness --contrast --saturation --gamma --denoise --sharpen --deshake --audio`. Keep each file under 45 MB (the script warns). Watch for faces, number plates, house numbers and paperwork in the frames, as with photos.
+
+What goes where depends on what the Idea holds:
   - **Photos only:** one post per channel with the edited photos (as above).
-  - **Video only:** the video goes to TikTok, Instagram (as a Reel) and Facebook, one post each, with the same slot. If the Idea has more than one video, use the best one (steady, well lit, shows the doors) and say in the log and the final summary which ones you didn't use, so the owner can save one as its own Idea if they want it posted.
-  - **Photos and a video:** Instagram and Facebook get the edited photos; TikTok gets the video. One slot, one post per channel. Never mix photos and video in the same post.
-  - Drop a video for the same reasons as a photo (faces without agreement, number plates, house numbers, paperwork) or if it is shaky or too dark to see the doors.
+  - **Video only:** TikTok and the Instagram Reel get `-9x16.mp4`; Facebook gets `-feed.mp4`. One post each, same slot. If the Idea has more than one video, use the best one (steady, well lit, shows the doors) and say in the log and the final summary which ones you didn't use, so the owner can save one as its own Idea if they want it posted.
+  - **Photos and a video:** Instagram gets one carousel: the best photo first, then `-feed.mp4`, then the other photos (all 4:5, see the shape rule). Facebook gets the photos only (Facebook can't mix photos and video in one post). TikTok gets `-9x16.mp4`. One slot, one post per channel.
+  - Drop a video for the same reasons as a photo (faces without agreement, number plates, house numbers, paperwork) or if it is too shaky or too dark to see the doors even after editing.
 
 ### 5. Write the captions
 For each post, write one caption per platform, following `brand.md`.
@@ -121,7 +132,7 @@ For each post, write one caption per platform, following `brand.md`.
   - `mode: "customScheduled"`
   - `dueAt` set to the slot, as ISO 8601 with the UTC offset
   - the platform's caption
-  - `assets`: images with `url` set to the raw URL. Use the `-feed.jpg` images for Instagram and Facebook and the `-9x16.jpg` images for TikTok. Every image in one post must have the same shape (follow the shape rule in step 4). For a video post, the single asset is the Idea's video URL.
+  - `assets`: images and videos with `url` set to the raw URL (videos are committed to `images/<yyyy-mm-dd>/` like the photos; check their URLs return `200` with `video/mp4`). Use the `-feed.jpg` images and `-feed.mp4` for Instagram and Facebook and the `-9x16.jpg` images or `-9x16.mp4` for TikTok and Reels. Every item in one post must have the same shape (follow the shape rule in step 4).
 - If Buffer refuses a draft with a time, create it as a draft without `mode` and `dueAt`, and put the intended time in the log.
 - **Never** use `shareNow` or `shareNext`, or create anything that isn't a draft.
 - **Never** edit or delete posts, or Ideas, that you did not create in this run.

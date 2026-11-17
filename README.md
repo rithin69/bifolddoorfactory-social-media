@@ -15,6 +15,7 @@ This repository is public so that Buffer can fetch the edited images. It never h
 - `AGENT.md`: the agent's step-by-step instructions.
 - `brand.md`: facts, voice and the claims we never make. Edit it to change how the posts sound.
 - `scripts/edit.py`: the photo editor. It measures each photo, straightens it, corrects light and colour, frames it around the doors and glazing without cutting them off, and strips location data.
-- `images/`: the edited images, one folder per week.
+- `scripts/video.py`: the video editor. It reframes each clip for the feed and for vertical video without cutting it off, removes baked-in black bars, corrects light and colour gently, levels the sound and strips location data.
+- `images/`: the edited images and videos, one folder per week.
 - `processed.json`: the Buffer Ideas already used.
 - `log.md`: what happened on each run.
