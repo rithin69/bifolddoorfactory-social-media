@@ -32,13 +32,9 @@ Read `brand.md` before writing anything. It is the source of truth for facts, vo
 
 ### 3. Check each Idea's photos
 - Download each photo to a temporary folder **outside the repository** (`/tmp/bdf/<idea-id>/`) with `curl -sL`. Look at each one with the Read tool.
-- **Drop a photo** if:
-  - it is blurred or very dark;
-  - it shows a house number, car number plate, paperwork or a screen with personal details;
-  - it is clearly not our work (a stock image or a screenshot).
-- If no usable photo is left, mark the Idea `rejected` with the reason and move on.
-
-- A post can use 1 to 10 photos from the same Idea. Put the best one first and leave out any that are near-duplicates or weak; fewer good photos beat more average ones.
+- **Use every photo the owner saved in the Idea.** Don't leave any out: not for being dark or soft (the editor corrects light and sharpness), not for people, not for house numbers or number plates, and not for looking similar to another. The owner approves every draft and can remove anything there.
+- The only exception: a picture that is plainly not a photo of our work at all, such as Buffer's own sample image or a screenshot of an app. Note it in the summary.
+- Put the best photo first. Instagram allows up to 20 items in one post: if an Idea has more than 20 photos, use the best 20 and say in the summary which ones didn't fit.
 
 ### 4. Edit the photos
 Every photo gets its own edit. Never apply one set of settings to every photo.
@@ -109,9 +105,8 @@ It writes `<name>-feed.mp4` (4:5, up to 60 seconds, for the Instagram carousel a
 
 What goes where depends on what the Idea holds:
   - **Photos only:** one post per channel with the edited photos (as above).
-  - **Video only:** TikTok and the Instagram Reel get `-9x16.mp4`; Facebook gets `-feed.mp4`. One post each, same slot. If the Idea has more than one video, use the best one (steady, well lit, shows the doors) and say in the log and the final summary which ones you didn't use, so the owner can save one as its own Idea if they want it posted.
+  - **Video only:** TikTok and the Instagram Reel get `-9x16.mp4`; Facebook gets `-feed.mp4`. One post each, same slot. If the Idea has more than one video, use the best one for this post (steady, well lit, shows the doors) and say in the final summary which others there are, so the owner can save them as their own Ideas.
   - **Photos and a video:** Instagram gets one carousel: the best photo first, then `-feed.mp4`, then the other photos (all 4:5, see the shape rule). Facebook gets the photos only (Facebook can't mix photos and video in one post). TikTok gets `-9x16.mp4`. One slot, one post per channel.
-  - Drop a video for the same reasons as a photo (number plates, house numbers, paperwork) or if it is too shaky or too dark to see the doors even after editing.
 
 ### 5. Write the captions
 For each post, write one caption per platform, following `brand.md`.
