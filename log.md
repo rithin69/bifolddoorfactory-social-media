@@ -11,3 +11,7 @@ Each weekly run adds an entry here: what it drafted, what it skipped and why.
 - Drafts: Instagram 6af5ed4a6b041da7276034fd, Facebook 6af5ed4ed95eb37c36f3e8f4, TikTok 6af5ed516b041da7276036b6.
 - Edits (originals in /tmp, not committed): photo 1 focus 0.3,0.55 contrast 1.05; photo 2 focus 0.5,0.55; photo 3 focus 0.62,0.5 brightness 1.08; photo 4 focus 0.5,0.45 brightness 1.08.
 - Note: the system PIL was broken, so a venv was used to run scripts/edit.py. Only one new Idea existed, so Thursday and Saturday slots were unused.
+
+## 2026-11-17
+- No new Ideas. The only Idea in Buffer (6af5ec90da1a7c9c3c8ae258) was already drafted on 2026-11-12 but had not been recorded in processed.json; it is now recorded as drafted with its three post ids. No drafts created.
+- Its three drafts are still in draft status (due Tue 2026-11-17 18:00), awaiting owner approval. Their images are on main, not a media branch, so there is nothing to clear in step 9.

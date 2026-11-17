@@ -8,5 +8,16 @@
     "date": "2026-11-12",
     "status": "rejected",
     "reason": "Buffer default welcome idea with a Buffer stock illustration, not our work"
+  },
+  "6af5ec90da1a7c9c3c8ae258": {
+    "date": "2026-11-12",
+    "status": "drafted",
+    "reason": "Used in 2026-11-12 second run (recorded late)",
+    "branch": "main (images/2026-11-12, pre-branch layout)",
+    "posts": [
+      "6af5ed4a6b041da7276034fd",
+      "6af5ed4ed95eb37c36f3e8f4",
+      "6af5ed516b041da7276036b6"
+    ]
   }
 }
