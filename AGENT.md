@@ -34,7 +34,6 @@ Read `brand.md` before writing anything. It is the source of truth for facts, vo
 - Download each photo to a temporary folder **outside the repository** (`/tmp/bdf/<idea-id>/`) with `curl -sL`. Look at each one with the Read tool.
 - **Drop a photo** if:
   - it is blurred or very dark;
-  - it shows a recognisable person's face (unless the note says they agreed);
   - it shows a house number, car number plate, paperwork or a screen with personal details;
   - it is clearly not our work (a stock image or a screenshot).
 - If no usable photo is left, mark the Idea `rejected` with the reason and move on.
@@ -106,13 +105,13 @@ It reports the length, shape, sound, light and grain, and suggests settings with
 ```
 /tmp/venv/bin/python scripts/video.py /tmp/bdf/<idea-id>/<file> --name <yyyy-mm-dd>-<short-slug>-v1 --out images/<yyyy-mm-dd> [overrides]
 ```
-It writes `<name>-feed.mp4` (4:5, up to 60 seconds, for the Instagram carousel and Facebook) and `<name>-9x16.mp4` (vertical, up to 3 minutes, for TikTok and the Instagram Reel), with gentle light and colour correction, levelled sound and no metadata, plus three JPEG frames of each (`-feed-1.jpg` to `-9x16-3.jpg`). **Look at all six frames** the way you check photos: nothing cut off (a landscape clip is shown whole on a blurred background, never cropped tall), natural colour, no over-processing. Options: `--start` and `--length` to choose the best part of a long clip, `--brightness --contrast --saturation --gamma --denoise --sharpen --deshake --audio`. Keep each file under 45 MB (the script warns). Watch for faces, number plates, house numbers and paperwork in the frames, as with photos.
+It writes `<name>-feed.mp4` (4:5, up to 60 seconds, for the Instagram carousel and Facebook) and `<name>-9x16.mp4` (vertical, up to 3 minutes, for TikTok and the Instagram Reel), with gentle light and colour correction, levelled sound and no metadata, plus three JPEG frames of each (`-feed-1.jpg` to `-9x16-3.jpg`). **Look at all six frames** the way you check photos: nothing cut off (a landscape clip is shown whole on a blurred background, never cropped tall), natural colour, no over-processing. Options: `--start` and `--length` to choose the best part of a long clip, `--brightness --contrast --saturation --gamma --denoise --sharpen --deshake --audio`. Keep each file under 45 MB (the script warns). Watch for number plates, house numbers and paperwork in the frames, as with photos.
 
 What goes where depends on what the Idea holds:
   - **Photos only:** one post per channel with the edited photos (as above).
   - **Video only:** TikTok and the Instagram Reel get `-9x16.mp4`; Facebook gets `-feed.mp4`. One post each, same slot. If the Idea has more than one video, use the best one (steady, well lit, shows the doors) and say in the log and the final summary which ones you didn't use, so the owner can save one as its own Idea if they want it posted.
   - **Photos and a video:** Instagram gets one carousel: the best photo first, then `-feed.mp4`, then the other photos (all 4:5, see the shape rule). Facebook gets the photos only (Facebook can't mix photos and video in one post). TikTok gets `-9x16.mp4`. One slot, one post per channel.
-  - Drop a video for the same reasons as a photo (faces without agreement, number plates, house numbers, paperwork) or if it is too shaky or too dark to see the doors even after editing.
+  - Drop a video for the same reasons as a photo (number plates, house numbers, paperwork) or if it is too shaky or too dark to see the doors even after editing.
 
 ### 5. Write the captions
 For each post, write one caption per platform, following `brand.md`.
