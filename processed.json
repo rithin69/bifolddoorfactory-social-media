@@ -49,7 +49,13 @@
   },
   "6afc65f888fced41c344cb52": {
     "date": "2026-11-17",
-    "status": "skipped",
-    "reason": "Third save of the art deco Cortizo RAL 1013 job. Photo 1 (outside, doors open, nobody in view) carries an 'AI-generated content' watermark: people were erased with a phone AI tool, so it is not as photographed and can't be used. Photos 2-4: people tool verdict 'drop this photo' (prominent figures). Interiors 5-8 are the same shots already in Saturday's art deco drafts."
+    "status": "drafted",
+    "reason": "Art deco Cortizo RAL 1013; owner deleted the earlier drafts and asked for this Idea to be used. Interiors 5-8 used. Photo 1 held back (AI-eraser watermark, people erased); photos 2-4 held back (prominent people, no consent in note); awaiting owner's answer.",
+    "branch": "media-2026-11-17",
+    "posts": [
+      "6afc7180afa176f59992ea64",
+      "6afc7186104bf3e624898a49",
+      "6afc718b7a7b613f1687fb5c"
+    ]
   }
 }

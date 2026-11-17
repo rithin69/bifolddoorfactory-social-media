@@ -56,3 +56,9 @@ Each weekly run adds an entry here: what it drafted, what it skipped and why.
 - Photos 5-8 (interiors) are the same shots already in Saturday's art deco drafts (Sat 2026-11-21 18:00), so a second post would be a duplicate.
 - All three slots this week (Tue 17, Thu 19, Sat 21 Nov, 18:00) already hold earlier drafts.
 - Step 9: only media-2026-11-17 exists (not older than 14 days); nothing deleted.
+- Update, same run: the owner said they had deleted all the earlier drafts (confirmed: the Tue/Thu/Sat post ids now return "not found") and asked for this Idea's photos to be used. Drafted it with the 4 interiors for Tue 2026-11-17 18:00 Europe/London (GMT).
+- Photos, in order: 7 (doors folded open), 6 (closed, face check: arm at the edge, no face; nothing changed), 8 (closed, at an angle), 5 (one door open; same arm at the edge, no face). All landscape, so --feed native; TikTok shows each whole on a blurred 9:16 background.
+- Edits: 7 shadows 0.35, highlights 0.35, keystone -0.098, clarity 0.4, saturation 1.08; 6 shadows 0.35, highlights 0.4, rotate 0.77, keystone -0.034, clarity 0.4, saturation 1.04; 8 shadows 0.35, highlights 0.35, rotate 1.57, clarity 0.4, saturation 1.04; 5 shadows 0.35, highlights 0.4, rotate 1.36, clarity 0.4, saturation 1.04.
+- Captions: "Art deco bifold doors in a special RAL 1013 colour." Cortizo aluminium, solid art deco bottom panels, slim glazing bars, folds back to the garden; home website.
+- Drafts: Instagram 6afc7180afa176f59992ea64 (4-photo carousel), Facebook 6afc7186104bf3e624898a49, TikTok 6afc718b7a7b613f1687fb5c. Media added to media-2026-11-17 (all 8 URLs 200 image/jpeg).
+- Photos 1-4 held back pending the owner's answer: 1 has the AI-eraser watermark; 2-4 show people too prominently to post without "faces OK".
