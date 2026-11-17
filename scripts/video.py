@@ -270,7 +270,7 @@ def graph(mode, size, s, m):
 def encode(src, dst, mode, size, s, m, start, length, has_audio):
     args = ['-ss', f'{start:.2f}', '-i', src, '-t', f'{length:.2f}',
             '-filter_complex', graph(mode, size, s, m), '-map', '[v]',
-            '-c:v', 'libx264', '-preset', 'medium', '-crf', '22', '-maxrate', '6M', '-bufsize', '12M',
+            '-c:v', 'libx264', '-preset', 'medium', '-crf', '23', '-maxrate', '4M', '-bufsize', '8M',
             '-map_metadata', '-1', '-movflags', '+faststart']
     if has_audio and s['audio'] != 'mute':
         args += ['-map', '0:a:0', '-c:a', 'aac', '-b:a', '128k', '-ar', '48000']
