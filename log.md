@@ -24,3 +24,13 @@ Each weekly run adds an entry here: what it drafted, what it skipped and why.
 - Edits (all landscape, so --feed native): photo 1 highlights 0.2, keystone 0.023; photo 2 (exterior, glazed) highlights 0.2, rotate -0.44, keystone 0.051; photo 3 (interior) shadows 0.35, highlights 0.35, rotate 0.63, keystone -0.07; photo 4 (interior, doors open) shadows 0.35, highlights 0.35. Photo 2 shows a faint, unrecognisable reflection of a person in the glass; kept.
 - Media branch: media-2026-11-17 (all URLs returned 200 image/jpeg).
 - Step 9: no media-<date> branch older than 14 days; nothing deleted. The 12 Nov images are on main (pre-branch layout), so nothing to clear.
+
+## 2026-11-17 (third run)
+- Idea 6afc4753d5c4b0408070d6e0 ("art deco bi fold doors cortizo. ral 1013 special colour art deco bottom panels"), 8 photos, 3 used.
+- Dropped photos 1-4 (the outside shots of the back of the house): each shows people inside with recognisable faces (two people in the kitchen in 2 and 3, a face through the glass in 1, people and the photographer's reflection in 4), and the note doesn't say they agreed. Dropped photo 6 as a near-duplicate of photo 7. Used interiors 5 (doors folded open), 7 and 8 (doors closed). A person's arm and shoulder show at the right edge of photo 7, no face.
+- Slot: Sat 2026-11-21 18:00 Europe/London (GMT). Tuesday 18:00 already holds the 12 Nov drafts and Thursday 18:00 holds this morning's drafts, so Saturday was the free slot.
+- Captions: "Art deco bifold doors in a special RAL 1013 colour." Cortizo aluminium bifolds, solid art deco bottom panels, slim glazing bars, kitchen opens to the garden; home website. No place given, so no place hashtag.
+- Drafts: Instagram 6afc482bbea63ad8bdd0d30c (3-photo carousel), Facebook 6afc483055207cffaee93940, TikTok 6afc4835b7c36a6dabfb3068.
+- Edits (all landscape, so --feed native; interiors looking out): photo 5 shadows 0.35, highlights 0.35, keystone -0.098, clarity 0.4, saturation 1.08; photo 7 shadows 0.35, highlights 0.4, rotate 0.85, keystone -0.039, clarity 0.4, saturation 1.04; photo 8 shadows 0.35, highlights 0.35, rotate 1.57, clarity 0.4, saturation 1.04. TikTok versions show the whole photo on a blurred 9:16 background.
+- Media branch: media-2026-11-17 (added files; all 6 URLs returned 200 image/jpeg).
+- Step 9: no media-<date> branch older than 14 days; nothing deleted.
