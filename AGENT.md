@@ -65,14 +65,14 @@ This prints what the photo is like and the settings it suggests, each with a rea
 | Inside, looking out through the doors | `--shadows 0.3–0.45` and `--highlights 0.3–0.45`, so both the room and the garden show |
 | Dusk, evening or lit at night | `--auto 0` to keep the warm light; `--denoise 3–6` if grainy; clarity 0.15 |
 | Close-up of a handle, hinge, threshold or corner | clarity 0.5–0.6, no keystone; the focus is on the detail |
-| Wide shot of a whole elevation or façade | check verticals carefully; the 9:16 version will be the whole photo on a blurred background |
+| Wide shot of a whole elevation or façade | check verticals carefully; the 9:16 version will be the whole photo on a black background |
 | Building site or work in progress | edit as normal, but mention the mess in the final summary |
 
 **Shape rule for the post (decide this before editing):**
 - If the post will include a **video**, everything is 4:5: run the photos with `--feed auto` (never `native`), because the video's feed version is 4:5 and all items in an Instagram carousel must match.
 - Otherwise, if **every** photo in the post is landscape (wider than tall), run each one with `--feed native`. Instagram and Facebook accept landscape photos, so nothing is cut off and there are no blurred bars.
 - Otherwise leave `--feed` on auto: portrait photos get a 4:5 crop placed around the frames and glazing, and any landscape photo is shown whole on a blurred 4:5 background. All photos in one post then have the same shape, which Instagram needs for a carousel.
-- TikTok always gets the 9:16 version; the script shows the whole photo on a blurred background whenever a 9:16 crop would cut into the structure.
+- TikTok always gets the 9:16 version; the script shows the whole photo on plain black above and below whenever a 9:16 crop would cut into the structure.
 
 **c. Check the straightening yourself.**
 - If `lines_reliable` is true, the measured `rotate` and `keystone` are usually right. Still check them against the photo.
@@ -107,7 +107,7 @@ It reports the length, shape, sound, light and grain, and suggests settings with
 ```
 /tmp/venv/bin/python scripts/video.py /tmp/bdf/<idea-id>/<file> --name <yyyy-mm-dd>-<short-slug>-v1 --out images/<yyyy-mm-dd> [overrides]
 ```
-It writes `<name>-feed.mp4` (4:5, up to 60 seconds, for the Instagram carousel and Facebook) and `<name>-9x16.mp4` (vertical, up to 3 minutes, for TikTok and the Instagram Reel), with gentle light and colour correction, levelled sound and no metadata, plus three JPEG frames of each (`-feed-1.jpg` to `-9x16-3.jpg`). **Look at all six frames** the way you check photos: nothing cut off (a landscape clip is shown whole on a blurred background, never cropped tall), natural colour, no over-processing. Options: `--start` and `--length` to choose the best part of a long clip, `--brightness --contrast --saturation --gamma --denoise --sharpen --deshake --audio`. Keep each file under 45 MB (the script warns). Watch for number plates, house numbers and paperwork in the frames, as with photos.
+It writes `<name>-feed.mp4` (4:5, up to 60 seconds, for the Instagram carousel and Facebook) and `<name>-9x16.mp4` (vertical, up to 3 minutes, for TikTok and the Instagram Reel), with gentle light and colour correction, levelled sound and no metadata, plus three JPEG frames of each (`-feed-1.jpg` to `-9x16-3.jpg`). **Look at all six frames** the way you check photos: nothing cut off (a landscape clip is shown whole on black in the vertical version, never cropped tall), natural colour, no over-processing. Options: `--start` and `--length` to choose the best part of a long clip, `--brightness --contrast --saturation --gamma --denoise --sharpen --deshake --audio`. Keep each file under 45 MB (the script warns). Watch for number plates, house numbers and paperwork in the frames, as with photos.
 
 What goes where depends on what the Idea holds:
   - **Photos only:** one post per channel with the edited photos (as above).

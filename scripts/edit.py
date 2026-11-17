@@ -321,7 +321,7 @@ def suggest(m):
         why['tall'] = f"a 9:16 crop keeps {round(tk * 100)}% of the structure"
     else:
         s['tall'] = 'fit'
-        why['tall'] = f"a 9:16 crop would cut off {round((1 - tk) * 100)}% of the structure, so the whole photo is shown on a blurred background"
+        why['tall'] = f"a 9:16 crop would cut off {round((1 - tk) * 100)}% of the structure, so the whole photo is shown on a black background"
     short = min(m['width'], m['height'])
     if short < 1080:
         why['size'] = f"small photo ({m['width']}x{m['height']}): it will be enlarged and may look soft"
@@ -444,12 +444,16 @@ def crop_focus(img, ratio, fx, fy):
     return img.crop((left, top, left + cw, top + ch))
 
 
-def fit_frame(whole, size):
-    """The whole photo, as large as it fits, on a softly blurred and darkened
-    copy of itself, so nothing is cut off."""
+def fit_frame(whole, size, background='blur'):
+    """The whole photo, as large as it fits, so nothing is cut off: on plain
+    black (the TikTok version) or on a softly blurred, darkened copy of
+    itself (a feed post that must be 4:5)."""
     tw, th = size
-    back = ImageOps.fit(whole, size, Image.LANCZOS).filter(ImageFilter.GaussianBlur(45))
-    back = ImageEnhance.Brightness(back).enhance(0.75)
+    if background == 'black':
+        back = Image.new('RGB', size, (0, 0, 0))
+    else:
+        back = ImageOps.fit(whole, size, Image.LANCZOS).filter(ImageFilter.GaussianBlur(45))
+        back = ImageEnhance.Brightness(back).enhance(0.75)
     s = min(tw / whole.width, th / whole.height)
     front = whole.resize((round(whole.width * s), round(whole.height * s)), Image.LANCZOS)
     back.paste(front, ((tw - front.width) // 2, (th - front.height) // 2))
@@ -552,7 +556,7 @@ def main():
 
     # 9:16 version (TikTok)
     if s['tall'] == 'fit':
-        tall, note = fit_frame(img, TALL_SIZE), 'fit: whole photo on a blurred 9:16 background'
+        tall, note = fit_frame(img, TALL_SIZE, 'black'), 'fit: whole photo on a black 9:16 background'
     elif a.focus:
         fx, fy = (min(max(float(v), 0.0), 1.0) for v in a.focus.split(','))
         tall, note = crop_focus(img, TALL_RATIO, fx, fy), f'9:16 crop around focus {fx},{fy}'

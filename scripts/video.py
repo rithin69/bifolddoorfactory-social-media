@@ -261,6 +261,8 @@ def graph(mode, size, s, m):
     tone = bars_crop(m) + ','.join(tone_filters(s))
     if mode == 'crop':
         return f'[0:v]{tone},scale={tw}:{th}:force_original_aspect_ratio=increase,crop={tw}:{th},fps=30,format=yuv420p[v]'
+    if size == TALL_SIZE:   # TikTok and Reels: the whole clip on plain black
+        return f'[0:v]{tone},scale={tw}:{th}:force_original_aspect_ratio=decrease,pad={tw}:{th}:(ow-iw)/2:(oh-ih)/2:black,fps=30,format=yuv420p[v]'
     return (f'[0:v]{tone},split=2[bg][fg];'
             f'[bg]scale={tw}:{th}:force_original_aspect_ratio=increase,crop={tw}:{th},gblur=sigma=40,eq=brightness=-0.12[bgb];'
             f'[fg]scale={tw}:{th}:force_original_aspect_ratio=decrease[fgs];'
@@ -346,7 +348,7 @@ def main():
         dst = os.path.join(a.out, f'{a.name}-{label}.mp4')
         encode(a.input, dst, s[label if label == 'feed' else 'tall'], size, s, m, start, length, m['has_audio'])
         mb = os.path.getsize(dst) / 1e6
-        report[f'{label}_used'] = f"{'cropped to fill' if s[label if label == 'feed' else 'tall'] == 'crop' else 'whole clip on a blurred background'}, {length:.1f} s, {mb:.1f} MB"
+        report[f'{label}_used'] = f"{'cropped to fill' if s[label if label == 'feed' else 'tall'] == 'crop' else ('whole clip on a blurred background' if label == 'feed' else 'whole clip on black')}, {length:.1f} s, {mb:.1f} MB"
         if mb > 45:
             print(f'warning: {dst} is {mb:.0f} MB; keep files under 45 MB (shorten with --length)')
         print(dst)
