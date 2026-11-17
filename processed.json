@@ -41,5 +41,10 @@
       "6afc483055207cffaee93940",
       "6afc4835b7c36a6dabfb3068"
     ]
+  },
+  "6afc4e3d1c282b5aeb935d6c": {
+    "date": "2026-11-17",
+    "status": "skipped",
+    "reason": "Same 8 photos as Idea 6afc4753d5c4b0408070d6e0 (already drafted for Sat 21 Nov). The 4 outside shots show people with recognisable faces and could not be cleaned: the people tool could not download its detection model (download.pytorch.org blocked by the environment's network policy). The usable interiors are the ones already in Saturday's drafts, so no duplicate post was made. Remove this entry to retry once the network allows download.pytorch.org."
   }
 }

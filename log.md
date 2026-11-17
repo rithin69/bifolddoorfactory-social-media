@@ -34,3 +34,10 @@ Each weekly run adds an entry here: what it drafted, what it skipped and why.
 - Edits (all landscape, so --feed native; interiors looking out): photo 5 shadows 0.35, highlights 0.35, keystone -0.098, clarity 0.4, saturation 1.08; photo 7 shadows 0.35, highlights 0.4, rotate 0.85, keystone -0.039, clarity 0.4, saturation 1.04; photo 8 shadows 0.35, highlights 0.35, rotate 1.57, clarity 0.4, saturation 1.04. TikTok versions show the whole photo on a blurred 9:16 background.
 - Media branch: media-2026-11-17 (added files; all 6 URLs returned 200 image/jpeg).
 - Step 9: no media-<date> branch older than 14 days; nothing deleted.
+
+## 2026-11-17 (fourth run)
+- One new Idea: 6afc4e3d1c282b5aeb935d6c ("art deco bi fold doors cortizo. ral 1013 special volour art deco bottom panels..."), 8 photos. It holds exactly the same 8 photos as Idea 6afc4753d5c4b0408070d6e0, which is already drafted for Sat 2026-11-21 18:00.
+- Skipped, no drafts created. The 4 outside shots (1, 2, 3, 8) show people inside with recognisable faces and the note doesn't say they agreed, so step 3b applies. scripts/people.py failed on every photo: it could not download the Mask R-CNN model from download.pytorch.org ("Tunnel connection failed: 403 Forbidden"; the environment's network policy blocks that host). PyTorch itself installed. Without the tool those 4 photos can't be used. The usable photos left (interiors 4, 5, 7; photo 6 shows an arm) are the ones already in Saturday's drafts, so a second post with them would be a duplicate.
+- Fix: allow download.pytorch.org in the cloud environment's network settings, then delete this Idea's entry from processed.json (or save the Idea again) so the next run retries it.
+- All three slots this week (Tue 17, Thu 19, Sat 21 Nov, 18:00) already hold earlier drafts.
+- Step 9: only branch is media-2026-11-17 (not older than 14 days); nothing deleted.
