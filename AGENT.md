@@ -34,7 +34,13 @@ Read `brand.md` before writing anything. It is the source of truth for facts, vo
 - Download each photo to a temporary folder **outside the repository** (`/tmp/bdf/<idea-id>/`) with `curl -sL`. Look at each one with the Read tool.
 - **Use every photo the owner saved in the Idea.** Don't leave any out: not for being dark or soft (the editor corrects light and sharpness), not for people, not for house numbers or number plates, and not for looking similar to another. The owner approves every draft and can remove anything there.
 - The only exception: a picture that is plainly not a photo of our work at all, such as Buffer's own sample image or a screenshot of an app. Note it in the summary.
-- Put the best photo first. Instagram allows up to 20 items in one post: if an Idea has more than 20 photos, use the best 20 and say in the summary which ones didn't fit.
+- **Order the photos so the post tells the story of the job**, not in upload order:
+  1. The best overall shot first: the finished job, whole and clear, doors open if there's a shot of that. It's the one that stops people scrolling.
+  2. Other views of the finished job: outside first, then inside looking out.
+  3. Details: handles, thresholds, corners, glazing bars, colour close-ups.
+  4. Before and in-progress shots last, if there are any.
+  Use the same order on Instagram, Facebook and TikTok (with a video, see step 4f).
+- Instagram allows up to 20 items in one post: if an Idea has more than 20 photos, use the best 20 and say in the summary which ones didn't fit.
 
 ### 4. Edit the photos
 Every photo gets its own edit. Never apply one set of settings to every photo.
