@@ -41,3 +41,10 @@ Each weekly run adds an entry here: what it drafted, what it skipped and why.
 - Fix: allow download.pytorch.org in the cloud environment's network settings, then delete this Idea's entry from processed.json (or save the Idea again) so the next run retries it.
 - All three slots this week (Tue 17, Thu 19, Sat 21 Nov, 18:00) already hold earlier drafts.
 - Step 9: only branch is media-2026-11-17 (not older than 14 days); nothing deleted.
+
+## 2026-11-17 (fifth run)
+- Retried Idea 6afc4e3d1c282b5aeb935d6c (art deco Cortizo bifolds, RAL 1013, 8 photos), whose entry had been cleared so it could go through the people tool.
+- download.pytorch.org now serves the model files, but the PyTorch wheel host (download-r2.pytorch.org) is still blocked, so torch and torchvision were installed from PyPI instead. scripts/people.py then ran on the 4 outside shots (1, 2, 3, 8).
+- Results: photo 1: 1 person removed, 1 blurred. It failed the check: the fill where the woman was removed is smeared, and the blurred man looks ghostly. Photo 2: 2 blurred, the blurred figures stand in the middle of the opening and are the first thing you notice. Photo 3: 3 blurred (reflections in the glass). Photo 8: 4 blurred, with a visible blocky patch on one reflection.
+- During the run the owner said that if anything fails with the people photos, stop. Photo 1 failed, so the run stopped: none of the people photos were used and no drafts were created. The interiors left (4, 5, 7) are already in Saturday's art deco drafts. Marked skipped.
+- Step 9: only media-2026-11-17 exists (not older than 14 days); nothing deleted.

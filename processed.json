@@ -41,5 +41,10 @@
       "6afc483055207cffaee93940",
       "6afc4835b7c36a6dabfb3068"
     ]
+  },
+  "6afc4e3d1c282b5aeb935d6c": {
+    "date": "2026-11-17",
+    "status": "skipped",
+    "reason": "Retried with the people tool; photo 1 failed the check (smeared fill where a person was removed, ghostly blurred figure), so per the owner's instruction the photos with people were not used. Remaining interiors duplicate Saturday's art deco drafts."
   }
 }
