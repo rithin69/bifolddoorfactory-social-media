@@ -6,15 +6,16 @@ Read `brand.md` before writing anything. It is the source of truth for facts, vo
 
 ## How the pieces fit
 - **Buffer Ideas** are the inbox. The owner saves an Idea on their phone with photos of one job and a short note ("Ealing, 4 panel Schüco bifold, grey").
-- **This repository is public.** It exists so Buffer can fetch the edited images by URL. It holds only:
+- **This repository is public.** It exists so Buffer can fetch the edited images and videos by URL. `main` holds only:
   - these instructions,
-  - the editor script,
-  - edited, metadata-free images in `images/`,
+  - the editor scripts,
   - `processed.json`,
   - `log.md`.
 
+  Each week's edited, metadata-free images and videos live on a branch named `media-<yyyy-mm-dd>` (step 6), which is deleted once every post from that week has gone out (step 9).
+
   **Never commit an original photo**, or anything with a customer's name, street or house number.
-- **`processed.json`** maps each Buffer Idea id you've handled to `{ "date", "status": "drafted" | "rejected" | "skipped", "reason" }`, so you never use an Idea twice.
+- **`processed.json`** maps each Buffer Idea id you've handled to `{ "date", "status": "drafted" | "rejected" | "skipped", "reason", "branch", "posts" }`, so you never use an Idea twice and so step 9 knows which posts to check before removing a media branch.
 
 ## Steps
 
@@ -118,11 +119,12 @@ For each post, write one caption per platform, following `brand.md`.
 - If you're not sure what something is, describe it simply ("aluminium bifold doors") instead of guessing a system or size.
 - Home jobs link to bifolddoorfactory.co.uk; commercial jobs link to bdfa.uk.
 
-### 6. Publish the images (not the posts)
-- Commit `images/<yyyy-mm-dd>/` and push to `main`.
-- Each image's URL is `https://raw.githubusercontent.com/rithin69/bifolddoorfactory-social-media/main/images/<yyyy-mm-dd>/<file>`.
-- Check every URL with `curl -sI` and confirm it returns `200` with `image/jpeg`. If it doesn't yet, wait 30 seconds and retry, up to 5 times.
-- If a push to `main` is refused, stop, write the exact error in `log.md`, and say so in your final message. Do not push to another branch.
+### 6. Publish the images and videos (not the posts)
+Each week's media lives on its own branch, so it can be deleted once the posts have gone out (step 9) without the repository growing for ever.
+- Create the branch from `main`: `git checkout -b media-<yyyy-mm-dd>`, commit only `images/<yyyy-mm-dd>/`, and push it: `git push origin media-<yyyy-mm-dd>`. Then go back: `git checkout main`.
+- Each file's URL is `https://raw.githubusercontent.com/rithin69/bifolddoorfactory-social-media/media-<yyyy-mm-dd>/images/<yyyy-mm-dd>/<file>`.
+- Check every URL with `curl -sI` and confirm it returns `200` with `image/jpeg` or `video/mp4`. If it doesn't yet, wait 30 seconds and retry, up to 5 times.
+- If the push is refused, stop, write the exact error in `log.md`, and say so in your final message.
 
 ### 7. Create the Buffer drafts
 - Call `list_channels` and pick the Instagram, TikTok and Facebook channels. If one is missing, carry on with the others and note it.
@@ -139,10 +141,15 @@ For each post, write one caption per platform, following `brand.md`.
 - Record every draft's id.
 
 ### 8. Record and report
-- Update `processed.json` for every Idea you looked at.
+- Update `processed.json` for every Idea you looked at. For a drafted Idea also record `"branch": "media-<yyyy-mm-dd>"` and `"posts": [<every Buffer draft id you created for it>]`.
 - Append to `log.md`:
   - the date;
   - for each post: the Idea id, slot, a one-line summary of the captions, the Buffer draft ids per channel and the edit settings;
   - every rejection, skip or error.
-- Commit and push to `main`.
+- Commit `processed.json` and `log.md` and push to `main` (never the media folder: that stays on its branch).
 - Your final message is a short plain-English summary for the owner: how many drafts are waiting in Buffer, for which days, and anything that needs their attention, such as a photo turned down and why.
+
+### 9. Clear out media that has been posted
+The platforms keep their own copy of a post once it has gone out, and Buffer only needs our file until then. So, once a week's posts are all out, its branch can go.
+- For every `media-<date>` branch (`git branch -r`) whose date is **more than 14 days ago**: look up each post id recorded for it in `processed.json` with `get_post`. If every one is `sent` (a post the owner deleted counts as done), delete the branch: `git push origin --delete media-<date>`, and note it in `log.md`. If any post is still a draft, scheduled, or errored, leave the branch alone and say so in the log.
+- Never delete a branch younger than 14 days, never delete `main`, and never delete anything else.
