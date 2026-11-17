@@ -48,3 +48,11 @@ Each weekly run adds an entry here: what it drafted, what it skipped and why.
 - Results: photo 1: 1 person removed, 1 blurred. It failed the check: the fill where the woman was removed is smeared, and the blurred man looks ghostly. Photo 2: 2 blurred, the blurred figures stand in the middle of the opening and are the first thing you notice. Photo 3: 3 blurred (reflections in the glass). Photo 8: 4 blurred, with a visible blocky patch on one reflection.
 - During the run the owner said that if anything fails with the people photos, stop. Photo 1 failed, so the run stopped: none of the people photos were used and no drafts were created. The interiors left (4, 5, 7) are already in Saturday's art deco drafts. Marked skipped.
 - Step 9: only media-2026-11-17 exists (not older than 14 days); nothing deleted.
+
+## 2026-11-17 (sixth run)
+- One new Idea: 6afc65f888fced41c344cb52 (art deco Cortizo bifolds, RAL 1013, 8 photos), the third save of the same job. Skipped, no drafts created.
+- People tool: torch installed from PyPI (the PyTorch wheel host is still blocked); the model downloaded fine. Photo 1: nobody found. Photos 2, 3, 4: verdict "drop this photo" (people large or central even when blurred), so dropped.
+- Photo 1 (outside, doors folded open, nobody in view) has an "AI-generated content" watermark in the bottom-left corner: the people were erased with a phone's AI tool, so what is behind them was invented. Posts must show the job as photographed, so it was dropped.
+- Photos 5-8 (interiors) are the same shots already in Saturday's art deco drafts (Sat 2026-11-21 18:00), so a second post would be a duplicate.
+- All three slots this week (Tue 17, Thu 19, Sat 21 Nov, 18:00) already hold earlier drafts.
+- Step 9: only media-2026-11-17 exists (not older than 14 days); nothing deleted.

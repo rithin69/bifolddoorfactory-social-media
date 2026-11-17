@@ -46,5 +46,10 @@
     "date": "2026-11-17",
     "status": "skipped",
     "reason": "Retried with the people tool; photo 1 failed the check (smeared fill where a person was removed, ghostly blurred figure), so per the owner's instruction the photos with people were not used. Remaining interiors duplicate Saturday's art deco drafts."
+  },
+  "6afc65f888fced41c344cb52": {
+    "date": "2026-11-17",
+    "status": "skipped",
+    "reason": "Third save of the art deco Cortizo RAL 1013 job. Photo 1 (outside, doors open, nobody in view) carries an 'AI-generated content' watermark: people were erased with a phone AI tool, so it is not as photographed and can't be used. Photos 2-4: people tool verdict 'drop this photo' (prominent figures). Interiors 5-8 are the same shots already in Saturday's art deco drafts."
   }
 }
