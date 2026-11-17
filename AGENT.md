@@ -97,7 +97,7 @@ The aim is a photo that looks like a skilled photographer took it on a good day.
 - Never use any other tool to change what is in a photo.
 - **Videos:** don't edit them; use the Idea's own video URL as it is. What goes where depends on what the Idea holds:
   - **Photos only:** one post per channel with the edited photos (as above).
-  - **Video only:** the video goes to TikTok, Instagram (as a Reel) and Facebook, one post each, with the same slot. If the Idea has more than one video, use the best one and leave the rest for next week (note them in the log).
+  - **Video only:** the video goes to TikTok, Instagram (as a Reel) and Facebook, one post each, with the same slot. If the Idea has more than one video, use the best one (steady, well lit, shows the doors) and say in the log and the final summary which ones you didn't use, so the owner can save one as its own Idea if they want it posted.
   - **Photos and a video:** Instagram and Facebook get the edited photos; TikTok gets the video. One slot, one post per channel. Never mix photos and video in the same post.
   - Drop a video for the same reasons as a photo (faces without agreement, number plates, house numbers, paperwork) or if it is shaky or too dark to see the doors.
 
