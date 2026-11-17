@@ -39,20 +39,22 @@ Read `brand.md` before writing anything. It is the source of truth for facts, vo
   - it is clearly not our work (a stock image or a screenshot).
 - If no usable photo is left, mark the Idea `rejected` with the reason and move on.
 
-### 3b. Take people out of the photos
+### 3b. Hide faces
 If the note says the people agreed ("faces OK" and similar), skip this step. Otherwise, for **every kept photo that shows anyone** (inside the room, behind the glass, in a reflection, in the garden):
-- Once per run, the first time it's needed: `/tmp/venv/bin/pip install -q -r requirements-people.txt --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.org/simple` (a few minutes; it downloads the models on first use).
+- Once per run, the first time it's needed, install the tools: `/tmp/venv/bin/pip install -q -r requirements-people.txt --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.org/simple`. If that fails (the PyTorch download site can be blocked by the network settings), install from PyPI instead: `/tmp/venv/bin/pip install -q -r requirements-people.txt` (slower and bigger, but it works). Note in the log which way it installed.
 - Run `/tmp/venv/bin/python scripts/people.py /tmp/bdf/<idea-id>/<file> --name <n> --out /tmp/bdf/<idea-id>/clean`.
-- It removes a person only when they stand against plain background with no frame, bar, glass or straight edge near them, and checks the fill for invented lines. Everyone else gets their face blurred, with the doors, frames and bars left exactly as photographed.
-- **Look at `<n>-people-check.jpg`** (original on the left, result on the right). Reject the result and drop the photo if any of these is true:
+- It **never removes anyone and never fills anything in**. It blurs each recognisable face only, from the person's own pixels, and leaves the doors, frames, bars and everything else exactly as photographed.
+- **If its verdict is "drop this photo"** (a person is large or central, so even blurred they would be the first thing anyone sees), drop the photo. Do not try to rescue it.
+- Otherwise **look at `<n>-people-check.jpg`** (original on the left, result on the right) and drop the photo if any of these is true:
   - a door, frame, glazing bar, handle, threshold or glass looks different from the original in any way;
-  - a filled-in area looks made up: a smear, a repeated pattern, a shape that wasn't there, or a background that doesn't match its surroundings;
   - a face is still recognisable;
-  - the photo now looks odd because of the blur (for example a blurred figure is the first thing you notice). Prefer the other photos from the Idea in that case.
+  - a blurred face draws the eye or looks odd;
+  - anything else in the photo has changed.
+- If anything goes wrong with the tool (an error, a missing output, a result you're unsure about), **drop the photos with people** and carry on with the rest. Never post a photo with a recognisable face, and never try another way of hiding or removing people.
 - If the people tool found nobody but you can see a recognisable face, drop the photo.
 - Edit `<n>-clean.jpg` in step 4, not the original.
-- Never use any other tool or method to change what is in a photo. Videos are not cleaned: drop a video that shows a recognisable face unless the note says they agreed.
-- In the log and the final summary, say for each photo how many people were removed and how many were blurred, so the owner can check before approving.
+- Videos are not cleaned: drop a video that shows a recognisable face unless the note says they agreed.
+- In the log and the final summary, say which photos had faces blurred and which were dropped because of people, and remind the owner: the best fix is to take the photos with nobody in view, or to write "faces OK" in the note when the people are happy to be shown.
 - A post can use 1 to 10 photos from the same Idea. Put the best one first and leave out any that are near-duplicates or weak; fewer good photos beat more average ones.
 
 ### 4. Edit the photos
@@ -111,7 +113,7 @@ Options are `--feed --tall --focus --rotate --keystone --auto --denoise --shadow
 
 The aim is a photo that looks like a skilled photographer took it on a good day. It should not look filtered.
 - The slug describes the product, never the customer, for example `ealing-bifold`.
-- Apart from step 3b, never use any tool to change what is in a photo.
+- Apart from blurring faces in step 3b, never use any tool to change what is in a photo.
 **f. Videos.** Download the clip like a photo, then measure it:
 ```
 /tmp/venv/bin/python scripts/video.py /tmp/bdf/<idea-id>/<file> --analyse
