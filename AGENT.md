@@ -34,7 +34,7 @@ Read `brand.md` before writing anything. It is the source of truth for facts, vo
 - Download each photo to a temporary folder **outside the repository** (`/tmp/bdf/<idea-id>/`) with `curl -sL`. Look at each one with the Read tool.
 - **Drop a photo** if:
   - it is blurred or very dark;
-  - it shows a recognisable person's face (unless the note says they agreed);
+  - it shows a recognisable person's face, including the owner or staff, unless the Idea's note says the people agreed (for example "faces OK", "that's me, fine to post", "team photo, all happy"). A small, distant or turned-away figure that nobody could recognise is fine. Say in the summary which photos you dropped for faces, so the owner can add "faces OK" and re-save if they wanted them;
   - it shows a house number, car number plate, paperwork or a screen with personal details;
   - it is clearly not our work (a stock image or a screenshot).
 - If no usable photo is left, mark the Idea `rejected` with the reason and move on.
