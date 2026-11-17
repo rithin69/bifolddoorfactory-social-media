@@ -50,12 +50,12 @@
   "6afc65f888fced41c344cb52": {
     "date": "2026-11-17",
     "status": "drafted",
-    "reason": "Art deco Cortizo RAL 1013; owner deleted the earlier drafts and asked for this Idea to be used. Interiors 5-8 used. Photo 1 held back (AI-eraser watermark, people erased); photos 2-4 held back (prominent people, no consent in note); awaiting owner's answer.",
+    "reason": "Art deco Cortizo RAL 1013; redone at the owner's request after they deleted the earlier drafts and replaced photo 1. All 7 photos used, per the updated AGENT.md.",
     "branch": "media-2026-11-17",
     "posts": [
-      "6afc7180afa176f59992ea64",
-      "6afc7186104bf3e624898a49",
-      "6afc718b7a7b613f1687fb5c"
+      "6afc7bc3afa176f59997412b",
+      "6afc7bcb7a7b613f168c39fb",
+      "6afc7bd37a7b613f168c3fc6"
     ]
   }
 }
