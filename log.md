@@ -66,3 +66,7 @@ Each weekly run adds an entry here: what it drafted, what it skipped and why.
 - Slot: Tue 2026-11-17 18:00 Europe/London (GMT). All landscape, --feed native; TikTok shows each whole on a blurred 9:16 background.
 - Edits: 1 contrast 1.07, saturation 1.06, clarity 0.5; 2 highlights 0.2, keystone -0.041, contrast 1.07, saturation 1.06, clarity 0.5; 3 highlights 0.2, rotate 0.68, keystone -0.033, contrast 1.07, saturation 1.06, clarity 0.5; 4 shadows 0.35, highlights 0.35, keystone -0.098, clarity 0.4, saturation 1.08; 5 shadows 0.35, highlights 0.4, rotate 0.85, keystone -0.039; 6 shadows 0.35, highlights 0.4, rotate 1.34; 7 shadows 0.35, highlights 0.35, rotate 1.57.
 - Drafts: Instagram 6afc7bc3afa176f59997412b (7-photo carousel), Facebook 6afc7bcb7a7b613f168c39fb, TikTok 6afc7bd37a7b613f168c3fc6. Media on media-2026-11-17 (all 14 URLs 200 image/jpeg).
+
+## 2026-11-23
+- No new ideas. The only Idea in Buffer (6afc65f888fced41c344cb52, art deco Cortizo bifolds) was already drafted on 2026-11-17. No drafts created.
+- Step 9: media-2026-11-17 is not older than 14 days; nothing deleted.
