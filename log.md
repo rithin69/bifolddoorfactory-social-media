@@ -70,3 +70,13 @@ Each weekly run adds an entry here: what it drafted, what it skipped and why.
 ## 2026-11-23
 - No new ideas. The only Idea in Buffer (6afc65f888fced41c344cb52, art deco Cortizo bifolds) was already drafted on 2026-11-17. No drafts created.
 - Step 9: media-2026-11-17 is not older than 14 days; nothing deleted.
+
+## 2026-11-23 (second run)
+- One new Idea since this morning: 6b04768ace940b72146d6d4a ("Schuco 75FD Slimline bifold door. Manufacturers and installers. White 9006 gloss on colour"), 4 photos, all used.
+- Order: outside doors folded open (photo 2), outside closed (1), inside looking out, open (3), inside looking out, closed (4). Building site: rubble and boards in the garden and an unfinished room inside; a faint reflection of the photographer and a figure inside behind the glass in photo 1.
+- Slot: Tue 2026-11-24 18:00 Europe/London (GMT).
+- Captions: "Five Schüco slimline panels, folded right back." Schüco 75FD slimline, five slim-framed panels, white 9006 gloss, made in West Drayton, new rear extension; home website. No place given, so no place hashtag.
+- Drafts: Instagram 6b0476f2e3def5d8b7503991 (4-photo carousel), Facebook 6b0476f8e3def5d8b7503e94, TikTok 6b0476fdff0a846b7fab657d.
+- Edits (all landscape, --feed native; TikTok shows each whole on black 9:16): 2 contrast 1.07, saturation 1.06, clarity 0.5; 1 keystone 0.055, contrast 1.07, saturation 1.06, clarity 0.5; 3 shadows 0.35, highlights 0.4, clarity 0.4, saturation 1.04; 4 rotate 0.68, keystone -0.072, shadows 0.35, highlights 0.4, clarity 0.4, saturation 1.08.
+- Media branch: media-2026-11-23 (all 8 URLs 200 image/jpeg).
+- Step 9: media-2026-11-17 is 6 days old (not older than 14 days); nothing deleted.
