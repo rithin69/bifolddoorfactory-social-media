@@ -82,3 +82,8 @@ Each weekly run adds an entry here: what it drafted, what it skipped and why.
 - Step 9: media-2026-11-17 is 6 days old (not older than 14 days); nothing deleted.
 - Update, same run: the owner asked for a video version too (2 drafts per channel). The Idea had no video, so a 14-second slideshow was built from the 4 edited photos (ffmpeg: 4 s per photo, slow 6% zoom, 0.6 s crossfades, silent audio track, no metadata): 2026-11-23-schuco-bifold-v1-9x16.mp4 (1080x1920, photos whole on black) and -v1-feed.mp4 (1080x810). Added to media-2026-11-23. raw.githubusercontent serves them as application/octet-stream (not video/mp4), but Buffer accepted both as video/mp4, 14 s.
 - Video drafts, same slot Tue 2026-11-24 18:00: Instagram Reel 6b0478b5ff0a846b7fac2aac (9:16), Facebook 6b0478bab61d3bfe62338065 (feed video), TikTok 6b0478bde3def5d8b75116ce (9:16). Captions match the photo posts with an "open, closed, inside and out" hook.
+
+## 2026-11-24
+- The owner asked for music on the TikTok video. Royalty-free music sites (pixabay.com, incompetech.com, freemusicarchive.org, bensound.com, archive.org) are blocked by the environment's network policy (proxy CONNECT 403), so an original 14 s chill-house track was synthesised in Python/numpy (120 BPM, Am-F-C-G, kick/hats/clap/bass/pad/pluck, -13 LUFS, peak -1 dB): no licence issues.
+- New file on media-2026-11-23: 2026-11-23-schuco-bifold-v2-music-9x16.mp4 (same video as v1 with the track; URL 200).
+- New TikTok draft 6b0561b8e860c84f09c8f68c, Tue 2026-11-24 18:00, same caption as the silent video draft. The silent TikTok video draft 6b0478bde3def5d8b75116ce was left in place for the owner to delete.
